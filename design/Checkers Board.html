@@ -1,0 +1,222 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Checkers Board</title>
+		<script type="text/javascript">
+			function measureBoard()
+			{
+				var board = document.getElementById("board");
+				var boardWidth = board.offsetWidth;
+				board.style.height = boardWidth + "px";
+
+				var rows = board.childNodes;
+				var rowHeight = boardWidth / 8;
+
+				for (var i = 0; i < rows.length; ++i)
+				{
+					var row = rows[i];
+
+					if (row.className == "row")
+					{
+						row.style.height = rowHeight + "px";
+						var positions = row.childNodes;
+
+						for (var j = 0; j < positions.length; ++j)
+						{
+							var position = positions[j];
+							var piece = position.childNodes;
+
+							if (piece.length >= 1)
+							{
+								var pieceImage = piece[0];
+								pieceImage.style.marginTop = (rowHeight / 8) + "px";
+								pieceImage.style.width = rowHeight + "px";
+							}
+						}
+					}
+				}
+			}
+
+			function showPositionInfo(position)
+			{
+				var x = position.getAttribute("data-x");
+				var y = position.getAttribute("data-y");
+				var textToShow = "x: " + x + ", y: " + y;
+
+				var positionInfoDirections = document.getElementById("positionInfoDirections");
+				positionInfoDirections.style.display = "none";
+
+				var positionInfo = document.getElementById("positionInfo");
+				positionInfo.innerHTML = textToShow;
+				positionInfo.style.display = "block";
+			}
+		</script>
+		<style type="text/css">
+			body
+			{
+				font-family: Arial, Helvetica, sans-serif;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 36em;
+				padding-left: 1em;
+				padding-right: 1em;
+			}
+
+			h1
+			{
+				color: #666666;
+				font-family: "Blue Highway D", Arial, Helvetica, sans-serif;
+				text-align: center;
+			}
+
+			p
+			{
+				line-height: 144%;
+			}
+
+			div.positionInfoHolder
+			{
+				font-weight: bold;
+				text-align: center;
+			}
+
+			p#positionInfo
+			{
+				display: none;
+			}
+
+			div#board
+			{
+				box-shadow: 0em 0em 1em #666666;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 88%;
+			}
+
+			div.positionBlack
+			{
+				background-color: #666666;
+				float: left;
+				height: 100%;
+				width: 12.5%;
+			}
+
+			div.positionWhite
+			{
+				background-color: #FFFFFF;
+				float: left;
+				height: 100%;
+				width: 12.5%;
+			}
+
+			div.clear
+			{
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body onload="measureBoard()" onresize="measureBoard()">
+		<h1>Checkers Board</h1>
+		<div class="positionInfoHolder">
+			<p id="positionInfoDirections">Click on a position to see it's coordinate information!</p>
+			<p id="positionInfo"></p>
+		</div>
+		<div id="board">
+			<div class="row">
+				<div class="positionWhite" data-x="0" data-y="7" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="1" data-y="7" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="2" data-y="7" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="3" data-y="7" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="4" data-y="7" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="5" data-y="7" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="6" data-y="7" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="7" data-y="7" onclick="showPositionInfo(this)"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="positionBlack" data-x="0" data-y="6" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="1" data-y="6" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="2" data-y="6" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="3" data-y="6" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="4" data-y="6" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="5" data-y="6" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="6" data-y="6" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="7" data-y="6" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="positionWhite" data-x="0" data-y="5" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="1" data-y="5" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="2" data-y="5" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="3" data-y="5" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="4" data-y="5" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="5" data-y="5" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="6" data-y="5" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/orange/piece_orange-192.png" /></div>
+				<div class="positionBlack" data-x="7" data-y="5" onclick="showPositionInfo(this)"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="positionBlack" data-x="0" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="1" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="positionBlack" data-x="2" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="3" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="positionBlack" data-x="4" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="5" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="positionBlack" data-x="6" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="7" data-y="4" onclick="showPositionInfo(this)"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="positionWhite" data-x="0" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="positionBlack" data-x="1" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="2" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="positionBlack" data-x="3" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="4" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="positionBlack" data-x="5" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="6" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="positionBlack" data-x="7" data-y="3" onclick="showPositionInfo(this)"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="positionBlack" data-x="0" data-y="2" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="1" data-y="2" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="2" data-y="2" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="3" data-y="2" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="4" data-y="2" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="5" data-y="2" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="6" data-y="2" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="7" data-y="2" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="positionWhite" data-x="0" data-y="1" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="1" data-y="1" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="2" data-y="1" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="3" data-y="1" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="4" data-y="1" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="5" data-y="1" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="6" data-y="1" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="7" data-y="1" onclick="showPositionInfo(this)"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="positionBlack" data-x="0" data-y="0" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="1" data-y="0" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="2" data-y="0" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="3" data-y="0" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="4" data-y="0" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="5" data-y="0" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="positionBlack" data-x="6" data-y="0" onclick="showPositionInfo(this)"></div>
+				<div class="positionWhite" data-x="7" data-y="0" onclick="showPositionInfo(this)"><img alt="Checkers Piece" src="../checkers/piece/green/piece_green-192.png" /></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<p>Use this file to better understand the coordinate system for the checkers board that is used in Classy Games. Go ahead and print it out! Remember that a checkers board is 8 positions wide and 8 positions tall. This means that there is a total of 64 positions on the board.</p>
+		<p>The game pieces shown on the board (green and orange) are the default colors used for the game. The player always controls green and their opponent always controls orange. (But note that these colors can be customized!) The player's pieces are always on bottom and the opponent's are always on top.</p>
+	</body>
+
+</html>
