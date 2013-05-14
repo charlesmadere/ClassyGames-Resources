@@ -11,11 +11,16 @@
 			function resizePieceImage(pieceImage, rowHeight)
 			{
 				pieceImage.style.height = (rowHeight * 0.96) + "px";
+				var height = pieceImage.clientHeight;
 				var width = pieceImage.clientWidth;
-				var margin = (rowHeight - width) / 2;
 
-				pieceImage.style.marginLeft = margin + "px";
-				pieceImage.style.marginRight = margin + "px";
+				var marginTopBottom = (rowHeight - height) / 2;
+				var marginLeftRight = (rowHeight - width) / 2;
+
+				pieceImage.style.marginTop = marginTopBottom + "px";
+				pieceImage.style.marginBottom = marginTopBottom + "px";
+				pieceImage.style.marginLeft = marginLeftRight + "px";
+				pieceImage.style.marginRight = marginLeftRight + "px";
 			}
 		</script>
 	</head>
@@ -23,7 +28,7 @@
 	<body onload="measureBoard()" onresize="measureBoard()">
 		<h1>Chess Board</h1>
 		<div class="positionInfoHolder">
-			<p id="positionInfo">Click on a position to see it's coordinate information!</p>
+			<h3 id="positionInfo">Click on a position to see it's coordinate information!</h3>
 		</div>
 		<div id="board">
 			<div class="row">
@@ -125,55 +130,55 @@
 				<div class="clear"></div>
 			</div>
 			<div class="row">
-				<div class="positionWhite" data-x="0" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="0" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
-				<div class="positionBlack" data-x="1" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="1" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
-				<div class="positionWhite" data-x="2" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="2" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
-				<div class="positionBlack" data-x="3" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="3" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
-				<div class="positionWhite" data-x="4" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="4" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
-				<div class="positionBlack" data-x="5" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="5" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
-				<div class="positionWhite" data-x="6" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="6" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
-				<div class="positionBlack" data-x="7" data-y="6" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="7" data-y="1" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/pawn/pink/pawn_pink-192.png" />
 				</div>
 				<div class="clear"></div>
 			</div>
 			<div class="row">
-				<div class="positionBlack" data-x="0" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="0" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/rook/pink/rook_pink-192.png" />
 				</div>
-				<div class="positionWhite" data-x="1" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="1" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/knight/pink/knight_pink-192.png" />
 				</div>
-				<div class="positionBlack" data-x="2" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="2" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/bishop/pink/bishop_pink-192.png" />
 				</div>
-				<div class="positionWhite" data-x="3" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="3" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/king/pink/king_pink-192.png" />
 				</div>
-				<div class="positionBlack" data-x="4" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="4" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/queen/pink/queen_pink-192.png" />
 				</div>
-				<div class="positionWhite" data-x="5" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="5" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/bishop/pink/bishop_pink-192.png" />
 				</div>
-				<div class="positionBlack" data-x="6" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionBlack" data-x="6" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/knight/pink/knight_pink-192.png" />
 				</div>
-				<div class="positionWhite" data-x="7" data-y="7" onclick="showPositionInfo(this)">
+				<div class="positionWhite" data-x="7" data-y="0" onclick="showPositionInfo(this)">
 					<img alt="Chess Piece" src="../chess/rook/pink/rook_pink-192.png" />
 				</div>
 				<div class="clear"></div>
