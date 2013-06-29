@@ -6,3 +6,5 @@ Want to find the exact colors used in Classy Games? `design/Color Scheme.html` W
 A vast majority of the art files in here were created in either Adobe Illustrator or Adobe Photoshop. Almost everything was created and / or edited using Creative Suite 6, but there are a few files here and there that were made using Creative Suite 5.5. So if you're having trouble opening any of the files, that could be why. As a rule of thumb however, if the file hasn't been edited since December 31st, 2012, then it's a CS5.5 file. Any time after that and it's almost certainly a CS6 file.
 
 ### Classy Games logo, original color scheme, and typography were designed by [Jenny Truong](https://twitter.com/honeeybj). ###
+
+Before you even begin to create resources for Android, be sure to consult the [Android Design Guidelines](https://developer.android.com/design/index.html). This website has many informative articles, like this one on [iconography](https://developer.android.com/design/style/iconography.html), and this other one on [color](https://developer.android.com/design/style/color.html).
