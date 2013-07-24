@@ -1,0 +1,1 @@
+These icons were taken from [GitHub's logos page](https://github.com/logos).
