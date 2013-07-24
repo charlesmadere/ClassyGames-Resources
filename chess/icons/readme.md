@@ -1,0 +1,1 @@
+These chess icons are strongly based off of the standard Unicode set. More information on that can be found on this Wikipedia page: [Chess symbols in Unicode](https://en.wikipedia.org/wiki/Chess_symbols_in_Unicode).
